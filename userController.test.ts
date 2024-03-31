@@ -1,3 +1,6 @@
+// A small test unit to test two database functions that are used in login process.
+// Author: Daniel Umejiego, Sol Kim
+
 import {
   getUserByEmailIdAndPassword,
   getUserById,
@@ -35,5 +38,15 @@ describe("Database function", () => {
       email: "jonathan123@gmail.com",
       password: "jonathan123!",
     });
+  });
+});
+describe("Database function", () => {
+  it("should get Jonathan's object", () => {
+    expect(getUserById(1)).toEqual({
+        id: 1,
+        name: "Jimmy Smith",
+        email: "jimmy123@gmail.com",
+        password: "jimmy123!",
+      });
   });
 });
